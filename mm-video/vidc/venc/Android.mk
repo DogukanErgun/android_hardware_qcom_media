@@ -33,8 +33,10 @@ libmm-venc-def += -DMAX_RES_1080P
 libmm-venc-def += -DMAX_RES_1080P_EBI
 libmm-venc-def += -DBADGER
 endif
+ifneq ($(BOARD_USES_PMEM_ADSP),true)
 ifeq ($(TARGET_USES_ION),true)
 libmm-venc-def += -DUSE_ION
+endif
 endif
 libmm-venc-def += -D_ANDROID_ICS_
 # ---------------------------------------------------------------------------------
